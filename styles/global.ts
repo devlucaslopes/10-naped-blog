@@ -29,6 +29,7 @@ const GlobalStyles: GlobalStyleComponent<
       font-family: ${theme.font.familyBody};
       font-size: ${theme.font.sizes.medium};
       background-color: ${theme.colors.dark};
+      color: ${theme.colors['white-200']};
     }
 
     h1,
@@ -38,6 +39,7 @@ const GlobalStyles: GlobalStyleComponent<
     h5,
     h6 {
       font-family: ${theme.font.familyHeading};
+      color: ${theme.colors['white']};
     }
 
     button {
