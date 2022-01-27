@@ -7,8 +7,6 @@ import {
 
 import theme from './theme'
 
-type Theme = typeof theme
-
 const GlobalStyles: GlobalStyleComponent<
   Theme,
   DefaultTheme
