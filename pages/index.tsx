@@ -5,9 +5,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Naped Blog</title>
-        <meta name="description" content="Mundo nerd? Naped!" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Naped Blog - Página inicial</title>
       </Head>
 
       <main>
