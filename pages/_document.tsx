@@ -1,9 +1,9 @@
 import Document, {
-  DocumentContext,
   Html,
   Head,
   Main,
-  NextScript
+  NextScript,
+  DocumentContext
 } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
@@ -20,7 +20,6 @@ export default class MyDocument extends Document {
         })
 
       const initialProps = await Document.getInitialProps(ctx)
-
       return {
         ...initialProps,
         styles: (
@@ -37,7 +36,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="pt-BR">
+      <Html lang="en-US">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
