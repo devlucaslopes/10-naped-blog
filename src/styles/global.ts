@@ -33,6 +33,14 @@ const GlobalStyles = createGlobalStyle`
     button {
       cursor: pointer;
     }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
   `}
 `
 

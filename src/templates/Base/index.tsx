@@ -1,3 +1,4 @@
+import { Menu } from '../../components/Menu'
 import { Container } from './styles'
 
 type BaseTemplateType = {
@@ -5,5 +6,10 @@ type BaseTemplateType = {
 }
 
 export const Base = ({ children }: BaseTemplateType) => {
-  return <Container>{children}</Container>
+  return (
+    <Container>
+      <Menu />
+      {children}
+    </Container>
+  )
 }

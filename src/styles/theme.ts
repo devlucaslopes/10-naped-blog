@@ -11,6 +11,11 @@ export default {
     dark: '#13131F'
   },
   font: {
+    weights: {
+      normal: 400,
+      medium: 500,
+      bold: 600
+    },
     familyHeading: 'Lexend Deca, sans-serif',
     familyBody: 'Inter, sans-serif',
     sizes: {
