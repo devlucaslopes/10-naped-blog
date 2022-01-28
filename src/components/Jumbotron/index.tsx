@@ -1,11 +1,13 @@
 import { Wrapper } from './styles'
 
-export const Jumbotron = () => (
+type JumbotronType = {
+  title: string
+  subtitle: string
+}
+
+export const Jumbotron = ({ title, subtitle }: JumbotronType) => (
   <Wrapper>
-    <h1>Mundo nerd? Naped!</h1>
-    <h2>
-      O Naped pode ser sua fonte de informações sobre o mundo nerd e outros
-      assuntos relacionados.
-    </h2>
+    <h1>{title}</h1>
+    <h2>{subtitle}</h2>
   </Wrapper>
 )
