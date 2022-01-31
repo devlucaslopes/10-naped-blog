@@ -1,18 +1,41 @@
-import styled, { css } from 'styled-components'
+import styled, { css, DefaultTheme } from 'styled-components'
+
+import { HighlightSizes, HightlightOrientations } from '.'
 
 type WrapperType = {
   bg: string
+  size: HighlightSizes
+  orientation: HightlightOrientations
+}
+
+const NUMBER_OF_ROWS = 2
+const HALF_GAP_ROWS = '0.8rem'
+
+const wrapperModifier = {
+  normalAndLandscape: () => css`
+    height: 35rem;
+  `,
+  smallAndLandscape: () => css`
+    height: calc((35rem / ${NUMBER_OF_ROWS}) - ${HALF_GAP_ROWS});
+  `
 }
 
 export const Wrapper = styled.div<WrapperType>`
-  ${({ theme, bg }) => css`
+  ${({ bg, size, orientation }) => css`
     width: 100%;
-    height: 35rem;
     position: relative;
     background-image: url(${bg});
     background-size: cover;
     background-position: center center;
     z-index: 0;
+
+    ${size === 'normal' &&
+    orientation === 'landscape' &&
+    wrapperModifier.normalAndLandscape()}
+
+    ${size === 'small' &&
+    orientation === 'landscape' &&
+    wrapperModifier.smallAndLandscape()}
 
     &::after {
       content: '';
@@ -27,28 +50,55 @@ export const Wrapper = styled.div<WrapperType>`
   `}
 `
 
-export const Tag = styled.div`
-  ${({ theme }) => css`
+type TagType = {
+  size: HighlightSizes
+}
+
+const tagModifier = {
+  normal: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.large};
+    width: 8rem;
+  `,
+  small: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.small};
+    width: 6rem;
+  `
+}
+
+export const Tag = styled.div<TagType>`
+  ${({ theme, size }) => css`
     top: ${theme.spacings.xsmall};
     left: ${theme.spacings.xsmall};
     position: absolute;
-    width: 8rem;
     padding: 0.8rem 0;
     text-align: center;
     background-color: ${theme.colors.primary};
-    font-size: ${theme.font.sizes.large};
     color: ${theme.colors.white};
     border-radius: ${theme.border.radius};
+    ${tagModifier[size](theme)};
   `}
 `
 
-export const Preview = styled.p`
-  ${({ theme }) => css`
+type PreviewType = {
+  size: HighlightSizes
+}
+
+const previewModifier = {
+  normal: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.xlarge};
+  `,
+  small: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.medium};
+  `
+}
+
+export const Preview = styled.p<PreviewType>`
+  ${({ theme, size }) => css`
     position: absolute;
     bottom: ${theme.spacings.xsmall};
     left: ${theme.spacings.xsmall};
     z-index: 2;
     color: ${theme.colors.white};
-    font-size: ${theme.font.sizes.xlarge};
+    ${previewModifier[size](theme)};
   `}
 `
