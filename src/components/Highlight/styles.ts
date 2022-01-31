@@ -75,6 +75,7 @@ export const Tag = styled.div<TagType>`
     background-color: ${theme.colors.primary};
     color: ${theme.colors.white};
     border-radius: ${theme.border.radius};
+    text-transform: uppercase;
     ${tagModifier[size](theme)};
   `}
 `
