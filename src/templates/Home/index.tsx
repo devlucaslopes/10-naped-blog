@@ -1,4 +1,4 @@
-import { Highlight } from '../../components/Highlight'
+import { Thumb } from '../../components/Thumb'
 import { Jumbotron } from '../../components/Jumbotron'
 import { MostPopular } from '../../components/MostPopulars'
 import { News } from '../../components/News'
@@ -13,7 +13,7 @@ export const Home = () => {
       assuntos relacionados."
       />
       <News>
-        <Highlight
+        <Thumb
           tag="games"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eros tellus, malesuada et velit in, blandit molestie dolor."
           backgroundURL="https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=80"
@@ -22,14 +22,14 @@ export const Home = () => {
         />
 
         <div className="right-side">
-          <Highlight
+          <Thumb
             tag="games"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eros tellus, malesuada et velit in, blandit molestie dolor."
             backgroundURL="https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=80"
             size="small"
             orientation="landscape"
           />
-          <Highlight
+          <Thumb
             tag="games"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eros tellus, malesuada et velit in, blandit molestie dolor."
             backgroundURL="https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=80"

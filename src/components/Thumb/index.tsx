@@ -1,23 +1,23 @@
 import { Wrapper, Tag, Preview } from './styles'
 
-export type HighlightSizes = 'normal' | 'small'
-export type HightlightOrientations = 'landscape' | 'portrait'
+export type ThumbSizes = 'normal' | 'small'
+export type ThumbOrientations = 'landscape' | 'portrait'
 
-type HighlightType = {
+type ThumbType = {
   tag: string
   description?: string
   backgroundURL: string
-  size: HighlightSizes
-  orientation: HightlightOrientations
+  size: ThumbSizes
+  orientation: ThumbOrientations
 }
 
-export const Highlight = ({
+export const Thumb = ({
   tag,
   description,
   backgroundURL,
   size,
   orientation
-}: HighlightType) => (
+}: ThumbType) => (
   <Wrapper size={size} orientation={orientation} bg={backgroundURL}>
     <Tag size={size}>{tag}</Tag>
     {description && (

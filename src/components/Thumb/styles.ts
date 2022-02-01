@@ -1,11 +1,11 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 
-import { HighlightSizes, HightlightOrientations } from '.'
+import { ThumbSizes, ThumbOrientations } from '.'
 
 type WrapperType = {
   bg: string
-  size: HighlightSizes
-  orientation: HightlightOrientations
+  size: ThumbSizes
+  orientation: ThumbOrientations
 }
 
 const NUMBER_OF_ROWS = 2
@@ -66,7 +66,7 @@ export const Wrapper = styled.div<WrapperType>`
 `
 
 type TagType = {
-  size: HighlightSizes
+  size: ThumbSizes
 }
 
 const tagModifier = {
@@ -96,7 +96,7 @@ export const Tag = styled.div<TagType>`
 `
 
 type PreviewType = {
-  size: HighlightSizes
+  size: ThumbSizes
 }
 
 const previewModifier = {
