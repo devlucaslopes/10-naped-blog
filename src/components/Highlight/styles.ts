@@ -15,6 +15,9 @@ const wrapperModifier = {
   normalAndLandscape: () => css`
     height: 35rem;
   `,
+  normalAndPortrait: () => css`
+    height: 25rem;
+  `,
   smallAndLandscape: () => css`
     height: calc((35rem / ${NUMBER_OF_ROWS}) - ${HALF_GAP_ROWS});
   `,
@@ -36,6 +39,10 @@ export const Wrapper = styled.div<WrapperType>`
     ${size === 'normal' &&
     orientation === 'landscape' &&
     wrapperModifier.normalAndLandscape()}
+
+    ${size === 'normal' &&
+    orientation === 'portrait' &&
+    wrapperModifier.normalAndPortrait()}
 
     ${size === 'small' &&
     orientation === 'landscape' &&
