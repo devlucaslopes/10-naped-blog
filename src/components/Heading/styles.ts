@@ -5,6 +5,7 @@ export const Title = styled.h3`
     font-size: ${theme.font.sizes.xlarge};
     font-weight: ${theme.font.weights.normal};
     position: relative;
+    margin-bottom: calc(${theme.spacings.xsmall} + 1.6rem);
 
     &::after {
       content: '';

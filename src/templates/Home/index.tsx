@@ -3,6 +3,7 @@ import { Jumbotron } from '../../components/Jumbotron'
 import { MostPopular } from '../../components/MostPopulars'
 import { News } from '../../components/News'
 import { Base } from '../Base'
+import { RecommendedPosts } from '../../components/RecommendedPosts'
 
 export const Home = () => {
   return (
@@ -12,6 +13,7 @@ export const Home = () => {
         subtitle="O Naped pode ser sua fonte de informações sobre o mundo nerd e outros
       assuntos relacionados."
       />
+
       <News>
         <Thumb
           tag="games"
@@ -38,8 +40,10 @@ export const Home = () => {
           />
         </div>
       </News>
+
       <MostPopular />
-      asdasdasd
+
+      <RecommendedPosts />
     </Base>
   )
 }
