@@ -17,6 +17,10 @@ const wrapperModifier = {
   `,
   smallAndLandscape: () => css`
     height: calc((35rem / ${NUMBER_OF_ROWS}) - ${HALF_GAP_ROWS});
+  `,
+  smallAndPortrait: () => css`
+    width: 15rem;
+    height: 15rem;
   `
 }
 
@@ -36,6 +40,10 @@ export const Wrapper = styled.div<WrapperType>`
     ${size === 'small' &&
     orientation === 'landscape' &&
     wrapperModifier.smallAndLandscape()}
+
+    ${size === 'small' &&
+    orientation === 'portrait' &&
+    wrapperModifier.smallAndPortrait()}
 
     &::after {
       content: '';
@@ -60,7 +68,7 @@ const tagModifier = {
     width: 8rem;
   `,
   small: (theme: DefaultTheme) => css`
-    font-size: ${theme.font.sizes.small};
+    font-size: ${theme.font.sizes.xsmall};
     width: 6rem;
   `
 }

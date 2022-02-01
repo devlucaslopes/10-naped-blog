@@ -6,6 +6,7 @@ export type HightlightOrientations = 'landscape' | 'portrait'
 type HighlightType = {
   tag: string
   description?: string
+  backgroundURL: string
   size: HighlightSizes
   orientation: HightlightOrientations
 }
@@ -13,14 +14,11 @@ type HighlightType = {
 export const Highlight = ({
   tag,
   description,
+  backgroundURL,
   size,
   orientation
 }: HighlightType) => (
-  <Wrapper
-    size={size}
-    orientation={orientation}
-    bg="https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=80"
-  >
+  <Wrapper size={size} orientation={orientation} bg={backgroundURL}>
     <Tag size={size}>{tag}</Tag>
     {description && (
       <Preview size={size}>
