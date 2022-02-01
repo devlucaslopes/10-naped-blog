@@ -12,7 +12,6 @@ export const Home = () => {
         subtitle="O Naped pode ser sua fonte de informações sobre o mundo nerd e outros
       assuntos relacionados."
       />
-
       <News>
         <Highlight
           tag="games"
@@ -39,8 +38,8 @@ export const Home = () => {
           />
         </div>
       </News>
-
       <MostPopular />
+      asdasdasd
     </Base>
   )
 }

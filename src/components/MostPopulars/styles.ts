@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import * as HeadingStyles from '../Heading/styles'
+
 const HEIGHT_PREVIEW = '15rem'
 const NUMBER_OF_ROWS = 5
 
@@ -39,5 +41,15 @@ export const PostPreviewList = styled.section`
 export const LatestPostsList = styled.section`
   ${({ theme }) => css`
     overflow: hidden;
+
+    ${HeadingStyles.Title} {
+      margin-bottom: calc(${theme.spacings.xsmall} + 1.6rem);
+    }
+
+    > div {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      gap: ${theme.spacings.xsmall};
+    }
   `}
 `
