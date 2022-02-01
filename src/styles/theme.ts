@@ -19,6 +19,7 @@ export default {
     familyHeading: 'Lexend Deca, sans-serif',
     familyBody: 'Inter, sans-serif',
     sizes: {
+      xsmall: '1.2rem',
       small: '1.4rem',
       medium: '1.6rem',
       large: '1.8rem',
