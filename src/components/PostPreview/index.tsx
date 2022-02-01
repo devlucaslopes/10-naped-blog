@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { Highlight } from '../Highlight'
 
 import { Wrapper, Info } from './styles'
@@ -20,7 +22,7 @@ export const PostPreview = () => (
         tellus, malesuada et velit in, blandit molestie dolor.
       </p>
       <span>31/01/2022</span>
-      <a href="#">asdasd</a>
+      <Link href="/">Ler notícia</Link>
     </Info>
   </Wrapper>
 )
