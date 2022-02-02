@@ -1,3 +1,4 @@
+import { Footer } from '../../components/Footer'
 import { Menu } from '../../components/Menu'
 import { Container } from './styles'
 
@@ -10,6 +11,7 @@ export const Base = ({ children }: BaseTemplateType) => {
     <Container>
       <Menu />
       {children}
+      <Footer />
     </Container>
   )
 }
