@@ -30,6 +30,7 @@ const GlobalStyles = createGlobalStyle`
       color: ${theme.colors['white']};
     }
 
+    a,
     button {
       cursor: pointer;
     }

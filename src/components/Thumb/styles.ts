@@ -27,7 +27,7 @@ const wrapperModifier = {
   `
 }
 
-export const Wrapper = styled.div<WrapperType>`
+export const Wrapper = styled.a<WrapperType>`
   ${({ bg, size, orientation }) => css`
     width: 100%;
     position: relative;
