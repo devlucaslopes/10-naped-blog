@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css, DefaultTheme } from 'styled-components'
 
 export const Header = styled.header`
   ${({ theme }) => css`
@@ -20,29 +20,41 @@ export const Navigation = styled.nav`
     ul {
       display: flex;
       gap: ${theme.grid.gutter};
+    }
+  `}
+`
 
-      a {
-        flex: 1;
-        font-weight: ${theme.font.weights.medium};
-        font-size: ${theme.font.sizes.medium};
-        color: ${theme.colors['white-200']};
-        position: relative;
-        transition: color 100ms;
+type NavLinkType = {
+  isCurrent: boolean
+}
 
-        &:hover {
-          color: ${theme.colors.white};
+const bottomLine = (theme: DefaultTheme) => css`
+  color: ${theme.colors.white};
 
-          &::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: ${theme.colors.primary};
-            bottom: -2px;
-            left: 0;
-          }
-        }
-      }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: ${theme.colors.primary};
+    bottom: -2px;
+    left: 0;
+  }
+`
+
+export const NavLink = styled.a<NavLinkType>`
+  ${({ theme, isCurrent }) => css`
+    flex: 1;
+    font-weight: ${theme.font.weights.medium};
+    font-size: ${theme.font.sizes.medium};
+    color: ${theme.colors['white-200']};
+    position: relative;
+    transition: color 100ms;
+
+    ${isCurrent && bottomLine(theme)};
+
+    &:hover {
+      ${bottomLine(theme)}
     }
   `}
 `
