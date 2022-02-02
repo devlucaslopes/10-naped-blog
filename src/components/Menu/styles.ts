@@ -53,7 +53,9 @@ export const NavLink = styled.a<NavLinkType>`
 
     ${isCurrent && bottomLine(theme)};
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
       ${bottomLine(theme)}
     }
   `}
