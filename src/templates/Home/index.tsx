@@ -5,7 +5,7 @@ import { News } from '../../components/News'
 import { Base } from '../Base'
 import { RecommendedPosts } from '../../components/RecommendedPosts'
 
-export const Home = () => {
+export const HomeTemplate = () => {
   return (
     <Base>
       <Jumbotron

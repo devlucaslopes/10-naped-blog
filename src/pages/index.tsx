@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 
-import { Home } from '../templates/Home'
+import { HomeTemplate } from '../templates/Home'
 
-const Homepage: NextPage = () => {
-  return <Home />
+const Home: NextPage = () => {
+  return <HomeTemplate />
 }
 
-export default Homepage
+export default Home
