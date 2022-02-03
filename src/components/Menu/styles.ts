@@ -6,6 +6,7 @@ export const Header = styled.header`
     align-items: center;
     justify-content: space-between;
     padding: ${theme.spacings.medium} 0;
+    height: 9rem;
 
     > a {
       font-size: ${theme.font.sizes.xlarge};
