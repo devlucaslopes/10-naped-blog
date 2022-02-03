@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+import { CustomLink } from '../CustomLink'
+
 import { Wrapper } from './styles'
 
 export const BackToHome = () => (
@@ -10,6 +12,7 @@ export const BackToHome = () => (
         A página que você está procurando pode ter sido removida ou está
         temporariamente indisponível.
       </p>
+      <CustomLink url="/">Voltar para Home</CustomLink>
     </div>
     <div>
       <Image

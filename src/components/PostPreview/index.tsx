@@ -1,8 +1,9 @@
 import Link from 'next/link'
+import { CustomLink } from '../CustomLink'
 
 import { Thumb } from '../Thumb'
 
-import { Wrapper, Info } from './styles'
+import { Wrapper, Info, WrapperButton } from './styles'
 
 export const PostPreview = () => (
   <Wrapper>
@@ -22,7 +23,11 @@ export const PostPreview = () => (
         tellus, malesuada et velit in, blandit molestie dolor.
       </p>
       <span>31/01/2022</span>
-      <Link href="/">Ler notícia</Link>
+      <WrapperButton>
+        <CustomLink size="small" url="/">
+          Ler notícia
+        </CustomLink>
+      </WrapperButton>
     </Info>
   </Wrapper>
 )

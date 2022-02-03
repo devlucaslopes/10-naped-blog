@@ -1,11 +1,18 @@
 import styled, { css } from 'styled-components'
 
+import * as CustomLinkStyles from '../CustomLink/styles'
+
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     height: calc(100vh - 9rem);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: calc(${theme.spacings.medium} * 2);
+
+    ${CustomLinkStyles.PurpleLink} {
+      width: 18rem;
+      margin-top: ${theme.spacings.xsmall};
+    }
 
     h1 {
       max-width: 45rem;

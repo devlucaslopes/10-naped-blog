@@ -24,20 +24,9 @@ export const Info = styled.div`
     span {
       font-size: ${theme.font.sizes.xsmall};
     }
-
-    a {
-      width: 10rem;
-      padding: 0.4rem 0;
-      background-color: ${theme.colors.primary};
-      color: ${theme.colors.white};
-      text-align: center;
-      font-size: ${theme.font.sizes.xsmall};
-      border-radius: ${theme.border.radius};
-      transition: filter 100ms ease-in-out;
-
-      &:hover {
-        filter: brightness(0.8);
-      }
-    }
   `}
+`
+
+export const WrapperButton = styled.div`
+  width: 10rem;
 `
