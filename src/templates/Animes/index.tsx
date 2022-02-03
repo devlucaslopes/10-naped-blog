@@ -2,6 +2,7 @@ import { Base } from '../Base'
 
 import { Jumbotron } from '../../components/Jumbotron'
 import { SearchForm } from '../../components/SearchForm'
+import { Results } from '../../components/Results'
 
 export const AnimesTemplate = () => {
   return (
@@ -13,6 +14,8 @@ export const AnimesTemplate = () => {
       />
 
       <SearchForm />
+
+      <Results />
     </Base>
   )
 }
