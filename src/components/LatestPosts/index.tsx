@@ -4,14 +4,13 @@ import { Thumb } from '../Thumb'
 
 import { Wrapper } from './styles'
 
-type RecommendedPostsProps = {
+type LatestPostsProps = {
   posts: PostProps[]
 }
 
-export const RecommendedPosts = ({ posts }: RecommendedPostsProps) => (
+export const LatestPosts = ({ posts }: LatestPostsProps) => (
   <Wrapper>
-    <Heading>Posts recomendados</Heading>
-
+    <Heading>Lorem ipsum dolor</Heading>
     <div>
       {posts.map((post) => (
         <Thumb

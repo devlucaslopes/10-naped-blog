@@ -4,8 +4,29 @@ import { MostPopular } from '../../components/MostPopulars'
 import { News } from '../../components/News'
 import { Base } from '../Base'
 import { RecommendedPosts } from '../../components/RecommendedPosts'
+import { Grid } from './styles'
+import { LatestPosts } from '../../components/LatestPosts'
 
-export const HomeTemplate = () => {
+export type PostProps = {
+  slug: string
+  title: string
+  summary: string
+  cover: string
+  tag: string
+  publicatedAt: string
+}
+
+export type PostsBySectionType = {
+  [key: string]: PostProps[]
+}
+
+export type HomeTemplateProps = {
+  postsBySection: PostsBySectionType
+}
+
+export const HomeTemplate = ({ postsBySection }: HomeTemplateProps) => {
+  const [higlight, ...othersNewPosts] = postsBySection['news']
+
   return (
     <Base>
       <Jumbotron
@@ -16,34 +37,35 @@ export const HomeTemplate = () => {
 
       <News>
         <Thumb
-          tag="games"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eros tellus, malesuada et velit in, blandit molestie dolor."
-          backgroundURL="https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=60"
+          tag={higlight.tag}
+          description={higlight.summary}
+          backgroundURL={higlight.cover}
           size="normal"
           orientation="landscape"
+          slug={higlight.slug}
         />
 
         <div className="right-side">
-          <Thumb
-            tag="games"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eros tellus, malesuada et velit in, blandit molestie dolor."
-            backgroundURL="https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=60"
-            size="small"
-            orientation="landscape"
-          />
-          <Thumb
-            tag="games"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eros tellus, malesuada et velit in, blandit molestie dolor."
-            backgroundURL="https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=760&q=60"
-            size="small"
-            orientation="landscape"
-          />
+          {othersNewPosts.map((post) => (
+            <Thumb
+              key={post.slug}
+              tag={post.tag}
+              description={post.title}
+              backgroundURL={post.cover}
+              size="small"
+              orientation="landscape"
+              slug={post.slug}
+            />
+          ))}
         </div>
       </News>
 
-      <MostPopular />
+      <Grid>
+        <MostPopular posts={postsBySection['most-popular']} />
+        <LatestPosts posts={postsBySection['latest']} />
+      </Grid>
 
-      <RecommendedPosts />
+      <RecommendedPosts posts={postsBySection['recommended']} />
     </Base>
   )
 }
