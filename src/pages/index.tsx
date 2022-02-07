@@ -7,7 +7,7 @@ import {
   HomeTemplateProps,
   PostsBySectionType
 } from '../templates/Home'
-import { dateFormatter } from '../utils/formatters'
+import { dateFormatter, previewPostFormatter } from '../utils/formatters'
 
 const SECTIONS_CONFIGS = [
   {
@@ -48,19 +48,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
         pageSize: size
       })
 
-      const posts = results.map((post) => {
-        const { uid, tags, first_publication_date, data } = post
-        const { title, summary, cover } = data
-
-        return {
-          slug: `/${uid!}`,
-          title: RichText.asText(title),
-          summary: RichText.asText(summary),
-          cover: cover?.url,
-          tag: tags[1] ?? 'batata',
-          publicatedAt: dateFormatter(first_publication_date)
-        }
-      })
+      const posts = results.map((post) => previewPostFormatter(post))
 
       postsBySection[tag] = posts
     })

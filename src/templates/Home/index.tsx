@@ -13,7 +13,7 @@ export type PostProps = {
   summary: string
   cover: string
   tag: string
-  publicatedAt: string
+  publicatedAt?: string
 }
 
 export type PostsBySectionType = {
