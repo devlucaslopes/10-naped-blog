@@ -8,13 +8,17 @@ export const Menu = () => {
 
   return (
     <Header>
-      <Link href="/">Naped</Link>
+      <Link href="/">
+        <a aria-label="Voltar para página inicial">Naped</a>
+      </Link>
 
       <Navigation>
         <ul>
           <li>
             <Link href="/" passHref>
-              <NavLink isCurrent={pathname === '/'}>Home</NavLink>
+              <NavLink isCurrent={pathname === '/'} lang="en">
+                Home
+              </NavLink>
             </Link>
           </li>
           <li>

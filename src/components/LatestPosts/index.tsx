@@ -9,7 +9,7 @@ type LatestPostsProps = {
 }
 
 export const LatestPosts = ({ posts }: LatestPostsProps) => (
-  <Wrapper>
+  <Wrapper aria-label="Últimas atualizações">
     <Heading>Lorem ipsum dolor</Heading>
     <div>
       {posts.map((post) => (

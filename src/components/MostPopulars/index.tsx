@@ -8,7 +8,7 @@ type MostPopularProps = {
 }
 
 export const MostPopular = ({ posts }: MostPopularProps) => (
-  <Wrapper>
+  <Wrapper aria-label="Mais populares">
     {posts.map((post) => (
       <PostPreview key={post.slug} {...post} />
     ))}

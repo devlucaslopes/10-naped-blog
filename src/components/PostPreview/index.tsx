@@ -16,7 +16,7 @@ export const PostPreview = ({
   summary,
   publicatedAt
 }: PostPreviewProps) => (
-  <Wrapper>
+  <Wrapper aria-label="teste">
     <Thumb
       tag={tag}
       backgroundURL={cover}

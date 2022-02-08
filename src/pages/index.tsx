@@ -1,4 +1,5 @@
 import type { GetServerSideProps } from 'next'
+import Head from 'next/head'
 import { RichText } from 'prismic-dom'
 
 import { getPrismicClient } from '../services/prismic'
@@ -29,7 +30,14 @@ const SECTIONS_CONFIGS = [
 ]
 
 const Home = (props: HomeTemplateProps) => {
-  return <HomeTemplate {...props} />
+  return (
+    <>
+      <Head>
+        <title>Página inicial | Naped Blog</title>
+      </Head>
+      <HomeTemplate {...props} />
+    </>
+  )
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
