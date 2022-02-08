@@ -1,11 +1,6 @@
 import { GetServerSideProps } from 'next'
-import { RichText } from 'prismic-dom'
 
-import {
-  dateFormatter,
-  fullPostFormatter,
-  previewPostFormatter
-} from '../../utils/formatters'
+import { fullPostFormatter, previewPostFormatter } from '../../utils/formatters'
 import { getPrismicClient } from '../../services/prismic'
 import { PostTemplate, PostTemplateProps } from '../../templates/Post'
 

@@ -2,15 +2,14 @@ import { FormEvent, useState } from 'react'
 import * as prismic from '@prismicio/client'
 
 import { getPrismicClient } from '../../services/prismic'
+import { previewPostFormatter } from '../../utils/formatters'
 
 import { Base } from '../Base'
 import { Jumbotron } from '../../components/Jumbotron'
 import { SearchForm } from '../../components/SearchForm'
 import { Results } from '../../components/Results'
 import { PostProps } from '../Home'
-import { RichText } from 'prismic-dom'
 import { Loading } from '../../components/Loading'
-import { previewPostFormatter } from '../../utils/formatters'
 
 export const AnimesTemplate = () => {
   const [loading, setLoading] = useState(false)
@@ -18,11 +17,15 @@ export const AnimesTemplate = () => {
   const [posts, setPosts] = useState<PostProps[]>([])
   const [isEmpty, setIsEmpty] = useState(false)
 
-  const handleSearch = async (event: FormEvent) => {
-    event.preventDefault()
+  const resetForm = () => {
     setPosts([])
     setLoading(true)
     setIsEmpty(false)
+  }
+
+  const handleSearch = async (event: FormEvent) => {
+    event.preventDefault()
+    resetForm()
 
     const client = getPrismicClient()
 
