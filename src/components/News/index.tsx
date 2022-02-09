@@ -5,5 +5,5 @@ type NewsType = {
 }
 
 export const News = ({ children }: NewsType) => (
-  <Wrapper aria-label="Novos posts">{children}</Wrapper>
+  <Wrapper aria-label="Publicações mais recentes">{children}</Wrapper>
 )

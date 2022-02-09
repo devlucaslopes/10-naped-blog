@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.article`
+export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: grid;
     grid-template-columns: auto 1fr;

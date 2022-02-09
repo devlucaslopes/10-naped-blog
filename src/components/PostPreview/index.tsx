@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { PostProps } from '../../templates/Home'
 import { CustomLink } from '../CustomLink'
+import { SROnly } from '../SROnly'
 import { Thumb } from '../Thumb'
 
 import { Wrapper, Info, WrapperButton } from './styles'
@@ -16,7 +17,7 @@ export const PostPreview = ({
   summary,
   publicatedAt
 }: PostPreviewProps) => (
-  <Wrapper aria-label="teste">
+  <Wrapper>
     <Thumb
       tag={tag}
       backgroundURL={cover}
@@ -24,13 +25,15 @@ export const PostPreview = ({
       orientation="portrait"
       slug={slug}
     />
-    <Info>
+    <Info aria-labelledby={`info-${slug}`}>
       <h3>{title}</h3>
       <p>{summary}</p>
-      <span>{publicatedAt}</span>
+      <time>
+        <SROnly>publicado em: </SROnly> {publicatedAt}
+      </time>
       <WrapperButton>
-        <CustomLink size="small" url={slug}>
-          Ler notícia
+        <CustomLink size="small" url={slug} id={`info-${slug}`}>
+          Ler notícia <SROnly> {title}</SROnly>
         </CustomLink>
       </WrapperButton>
     </Info>

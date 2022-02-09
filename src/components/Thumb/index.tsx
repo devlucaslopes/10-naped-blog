@@ -23,9 +23,19 @@ export const Thumb = ({
   slug
 }: ThumbType) => (
   <Link href={slug} passHref>
-    <Wrapper size={size} orientation={orientation} bg={backgroundURL}>
+    <Wrapper
+      size={size}
+      orientation={orientation}
+      bg={backgroundURL}
+      aria-labelledby={description ? slug : ''}
+      aria-hidden={!description && 'true'}
+    >
       <Tag size={size}>{tag}</Tag>
-      {description && <Preview size={size}>{description}</Preview>}
+      {description && (
+        <Preview size={size} id={slug}>
+          {description}
+        </Preview>
+      )}
     </Wrapper>
   </Link>
 )

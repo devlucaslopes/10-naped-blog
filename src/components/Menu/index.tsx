@@ -16,9 +16,7 @@ export const Menu = () => {
         <ul>
           <li>
             <Link href="/" passHref>
-              <NavLink isCurrent={pathname === '/'} lang="en">
-                Home
-              </NavLink>
+              <NavLink isCurrent={pathname === '/'}>Home</NavLink>
             </Link>
           </li>
           <li>
